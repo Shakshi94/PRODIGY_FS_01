@@ -1,0 +1,30 @@
+<% layout('./layouts/boilerplate.ejs') -%>
+
+<div class="container-fluid flex mx-auto">
+    <div class="row offset-2">
+        <div class="col-md-7 col-sm-7 first1">
+              <h3 style="text-align: center; margin-bottom:2rem;">Login to Your Account</h3>
+            <form action="/login" method="POST">
+                <div class="mb-3 row">
+                    <div class="col-sm-10 offset-1">
+                        <input type="text" class="form-control" id="username"  name="username"  placeholder="username" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="col-sm-10 offset-1">
+                        <input type="password" class="form-control" id="password" name="password"  placeholder="password" required>
+                    </div>
+                </div>
+               <button type="submit" class="btn logIn-btn">Log In</button>
+            </form>
+            
+        </div>
+        <div class="col-md-3 col-sm-3 second1">
+            <div class="newUser">
+                <h3 style="margin-bottom:1rem;">New Here</h3>
+               <a href="/signup"> <button type="button" class="btn signup-btn">Sign Up</button></a>
+            </div>
+        </div>
+    </div>
+</div>
