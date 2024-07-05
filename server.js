@@ -15,7 +15,7 @@ main().then(console.log("database connected successfully"))
     .catch((err) => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/authenticateUser');
+    await mongoose.connect(process.env.MONGODB_URL);
 }
 
 app.use(express.urlencoded({ extended: true }));
@@ -66,7 +66,7 @@ app.post('/signup', async (req,res)=>{
     });
 
     await User.register(newUser,password);
-    res.send("successfully signup plz login in");
+    res.redirect('/login');
 
     }catch(err){
         console.error(err);
